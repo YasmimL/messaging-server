@@ -42,14 +42,22 @@ public class ClientHandler implements Runnable {
     }
 
     private void onMessage(Message<?> message) {
-//        final var service = MessagingService.getInstance();
         switch (message.getType()) {
             case SUBSCRIBE -> this.subscribeClient((String) message.getPayload());
             case GO_ONLINE -> this.clientStatus = ClientStatus.ONLINE;
             case GO_OFFLINE -> this.clientStatus = ClientStatus.OFFLINE;
             case GET_USERS_REQUEST -> this.handleGetUsersRequest();
             case CHAT_REQUEST -> this.handleChatMessageRequest((ChatMessage) message.getPayload());
+            case CLOSE -> this.changeUserLeave();
         }
+    }
+
+    private void changeUserLeave() {
+        final var messagingService = MessagingService.getInstance();
+        messagingService.getAllClientsExcept(this.clientUsername)
+            .forEach(client -> client.send(new Message<>(MessageType.USER_LEFT, this.clientUsername)));
+        messagingService.removeClient(this.clientUsername);
+        this.interrupted = true;
     }
 
     private void subscribeClient(String username) {

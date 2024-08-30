@@ -24,7 +24,18 @@ public class MessagingService {
         return this.clients.get(username);
     }
 
+    public void removeClient(String username) {
+        this.clients.remove(username);
+    }
+
     public List<String> getAllUsernames() {
         return this.clients.keySet().stream().toList();
+    }
+
+    public List<ClientHandler> getAllClientsExcept(String username) {
+        return this.clients.keySet().stream()
+            .filter(client -> !client.equals(username))
+            .map(this.clients::get)
+            .toList();
     }
 }
