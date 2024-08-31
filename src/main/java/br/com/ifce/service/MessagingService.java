@@ -1,5 +1,6 @@
 package br.com.ifce.service;
 
+import br.com.ifce.network.rmi.OfflineMessagingServiceProvider;
 import br.com.ifce.network.socket.ClientHandler;
 
 import java.util.HashMap;
@@ -17,7 +18,7 @@ public class MessagingService {
 
     public void addClient(String username, ClientHandler handler) {
         this.clients.put(username, handler);
-        // TODO: registar usuário no servidor de mensagens offline
+        OfflineMessagingServiceProvider.provide().createQueue(username);
     }
 
     public ClientHandler getClient(String username) {

@@ -4,6 +4,7 @@ import br.com.ifce.model.ChatMessage;
 import br.com.ifce.model.Message;
 import br.com.ifce.model.enums.ClientStatus;
 import br.com.ifce.model.enums.MessageType;
+import br.com.ifce.network.rmi.OfflineMessagingServiceProvider;
 import br.com.ifce.service.MessagingService;
 
 import java.io.IOException;
@@ -101,7 +102,7 @@ public class ClientHandler implements Runnable {
         if (receiver.online()) {
             receiver.send(message);
         } else {
-            // TODO: enviar mensagem para o servidor de mensagens offline
+            OfflineMessagingServiceProvider.provide().send(message.getPayload());
         }
         this.send(message);
     }

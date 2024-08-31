@@ -35,4 +35,13 @@ public class SocketServer {
             throw new RuntimeException(e);
         }
     }
+
+    public void close() {
+        try {
+            this.socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a4c05ae-67be-40d3-bce7-695599d3a904" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ifce/network/rmi/OfflineMessagingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ifce/network/rmi/OfflineMessagingServiceProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ifce/model/enums/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ifce/model/enums/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ifce/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ifce/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ifce/network/socket/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ifce/network/socket/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ifce/network/socket/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ifce/network/socket/SocketServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ifce/service/MessagingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ifce/service/MessagingService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +53,7 @@
       <recent name="br.com.ifce.network.model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.ifce.network.rmi" />
       <recent name="br.com.ifce.model" />
     </key>
   </component>
